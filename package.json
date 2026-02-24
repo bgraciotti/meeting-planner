@@ -1,0 +1,114 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "meeting-planner",
+  "title": "Meeting Planner",
+  "description": "Compare 24-hour timetables across multiple cities to find the best meeting time",
+  "icon": "icon.png",
+  "author": "bgraciotti",
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "version": "1.1.0",
+  "platforms": [
+    "Windows"
+  ],
+  "commands": [
+    {
+      "name": "meeting-planner",
+      "title": "Meeting Planner",
+      "description": "Compare local times across cities to plan meetings",
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "referenceCity",
+      "title": "Reference City",
+      "description": "The reference city shown in the first column of the timetable",
+      "type": "dropdown",
+      "required": false,
+      "default": "America/Sao_Paulo",
+      "data": [
+        { "title": "São Paulo", "value": "America/Sao_Paulo" },
+        { "title": "Rio de Janeiro", "value": "America/Sao_Paulo::Rio de Janeiro" },
+        { "title": "Brasília", "value": "America/Sao_Paulo::Brasília" },
+        { "title": "New York", "value": "America/New_York" },
+        { "title": "Chicago", "value": "America/Chicago" },
+        { "title": "Denver", "value": "America/Denver" },
+        { "title": "Los Angeles", "value": "America/Los_Angeles" },
+        { "title": "Toronto", "value": "America/Toronto" },
+        { "title": "Vancouver", "value": "America/Vancouver" },
+        { "title": "Mexico City", "value": "America/Mexico_City" },
+        { "title": "Buenos Aires", "value": "America/Argentina/Buenos_Aires" },
+        { "title": "Santiago", "value": "America/Santiago" },
+        { "title": "Bogotá", "value": "America/Bogota" },
+        { "title": "Lima", "value": "America/Lima" },
+        { "title": "London", "value": "Europe/London" },
+        { "title": "Lisbon", "value": "Europe/Lisbon" },
+        { "title": "Paris", "value": "Europe/Paris" },
+        { "title": "Berlin", "value": "Europe/Berlin" },
+        { "title": "Madrid", "value": "Europe/Madrid" },
+        { "title": "Rome", "value": "Europe/Rome" },
+        { "title": "Amsterdam", "value": "Europe/Amsterdam" },
+        { "title": "Warsaw", "value": "Europe/Warsaw" },
+        { "title": "Stockholm", "value": "Europe/Stockholm" },
+        { "title": "Istanbul", "value": "Europe/Istanbul" },
+        { "title": "Moscow", "value": "Europe/Moscow" },
+        { "title": "Dubai", "value": "Asia/Dubai" },
+        { "title": "Mumbai", "value": "Asia/Kolkata" },
+        { "title": "Bangkok", "value": "Asia/Bangkok" },
+        { "title": "Singapore", "value": "Asia/Singapore" },
+        { "title": "Shanghai", "value": "Asia/Shanghai" },
+        { "title": "Hong Kong", "value": "Asia/Hong_Kong" },
+        { "title": "Tokyo", "value": "Asia/Tokyo" },
+        { "title": "Seoul", "value": "Asia/Seoul" },
+        { "title": "Sydney", "value": "Australia/Sydney" },
+        { "title": "Auckland", "value": "Pacific/Auckland" }
+      ]
+    },
+    {
+      "name": "businessHoursStart",
+      "title": "Business Hours Start",
+      "description": "Hour when business hours begin (0-23)",
+      "type": "textfield",
+      "required": false,
+      "default": "8"
+    },
+    {
+      "name": "businessHoursEnd",
+      "title": "Business Hours End",
+      "description": "Hour when business hours end (0-23)",
+      "type": "textfield",
+      "required": false,
+      "default": "19"
+    },
+    {
+      "name": "sessionTimeout",
+      "title": "Session Timeout (minutes)",
+      "description": "How long to remember selected cities before asking again",
+      "type": "textfield",
+      "required": false,
+      "default": "5"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.83.2"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "20.8.10",
+    "@types/react": "^19.2.14",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "prepublishOnly": "echo \"\\n\\nIt seems like you are trying to publish the Raycast extension to npm.\\n\\nIf you did intend to publish it to npm, remove the \\`prepublishOnly\\` script and rerun \\`npm publish\\` again.\\nIf you wanted to publish it to the Raycast Store instead, use \\`npm run publish\\` instead.\\n\\n\" && exit 1",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
